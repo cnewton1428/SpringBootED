@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color: lightgray;">
+<body>
+<a href="/"> Home </a> --
+<a href="/addDepartment"> Add Department</a> --
+<a href="/Departmentlist">All Departments</a> --
+<a href="/addEmployee">Add Employees</a> --
+<a href="/employeelist">All Employees</a>
+
+<div class="container" style="background-color: deepskyblue">
+    <div class="jumbotron text-center" style="background-color: lawngreen">
+        <h1><b>Sterling Solutions, Inc.</b></h1>
+    </div>
+    <p><b>Employee Database</b></p>
+
+</div>
+
+<h2>Employee Details</h2>
+
+<tr>
+<p>
+    <th><b>Employee Name: </b></th> <span th:text="${employee.name}"></span><br />
+    <th><b>Title: </b></th> <span th:text="${employee.jobtitle}"></span><br />
+    <th><b>Department: </b></th> <span th:text="${employee.department.name}"></span>
+</p>
+
+</tr>
+</body>
+</body>
+</html>

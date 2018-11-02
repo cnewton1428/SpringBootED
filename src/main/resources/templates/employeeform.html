@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color: lightpink;">
+<body>
+
+<a href="/"> Home </a> --
+<a href="/addDepartment"> Add Department</a> --
+<a href="/Departmentlist">All Departments</a> --
+<a href="/addEmployee">Add Employees</a> --
+<a href="/employeelist">All Employees</a>
+
+<div class="container" style="background-color: deepskyblue">
+    <div class="jumbotron text-center" style="background-color: lawngreen">
+        <h1><b>Sterling Solutions, Inc.</b></h1>
+    </div>
+    <p><b>Employee Database</b></p>
+
+</div>
+
+<form action="#"
+      th:action="@{/addEmployee}"
+      th:object="${employee}"
+      method="post">
+
+    <input type="hidden" th:field="*{id}" />
+
+    Employee Name: <input type="text" name="name" th:field="*{name}"/><br />
+
+    Job Title: <input type="text" name="jobtitle" th:field="*{jobtitle}"/><br/>
+
+    Department: <select name="department" th:field="*{department}">
+    <option th:each="department : ${departments}"
+            th:value="${department.id}"
+            th:text="${department.name}" />
+</select><br/><br />
+
+    <input type="submit" value = "Submit" />
+
+</form>
+</body>
+</body>
+</html>
